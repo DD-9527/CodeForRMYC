@@ -15,10 +15,9 @@
 
 部分文件因超出上传大小限制，已完整保存至百度网盘，敬请理解,
 
-通过百度网盘分享的文件：RMYC2020-2024的所有开源资料
-链接：https://pan.baidu.com/s/1aZeNetQXb1Y3I-UecsXvvA?pwd=0000 
+https://pan.baidu.com/s/1aZeNetQXb1Y3I-UecsXvvA?pwd=0000 
+
 提取码：0000 
---来自百度网盘超级会员V6的分享
 
 文件整理略显匆忙，或许带来些许不便，恳请包涵。
 
