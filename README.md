@@ -21,9 +21,13 @@
 
 https://pan.baidu.com/s/17iNWmNFBMSKog2ADmbLV1A?pwd=0000 
 
-本仓库内以".dsp"为后缀的文件，均可在“RoboMaster”APP和“大疆教育平台”中打开
+本仓库内以“.dsp”为后缀的文件，均可在“RoboMaster”APP和“大疆教育平台”中打开
 
 软件下载链接：https://www.dji.com/cn/edu-hub
+
+“迷宫赛”以及文件夹下以“.sb3”为后缀的文件为scratch文件，可用加载了TTEDU库的“Mind+”打开
+
+软件下载链接：https://mindplus.cc
 
 非常感谢一直以来支持、参与机甲大师青少年对抗赛的每一个人,
 
