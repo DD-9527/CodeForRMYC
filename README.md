@@ -19,7 +19,7 @@
 
 文件整理略显匆忙，早期文件管理较为混乱，文件命名规范性较差，或许带来些许不便，恳请包涵。
 
-https://pan.baidu.com/s/17iNWmNFBMSKog2ADmbLV1A?pwd=0000 
+https://pan.baidu.com/s/1ASe7nWv2v8_2u0RJBG8MfA?pwd=0000 
 
 本仓库内以“.dsp”为后缀的文件，均可在“RoboMaster”APP和“大疆教育平台”中打开
 
