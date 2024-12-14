@@ -1,0 +1,66 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Created on Wed May 29 19:18:28 2019
+@author: Gavin
+"""
+
+import cv2,time
+import numpy as np
+#SET value
+s = 25
+max = 3
+chance = 4
+img_path = r"C:\Users\Administrator\Desktop\open\open10.png"
+img = cv2.imread(img_path)
+cv2.imshow("start", img)
+#######
+blur = cv2.blur(img,(5,5))
+blur0=cv2.medianBlur(blur,5)
+blur1= cv2.GaussianBlur(blur0,(5,5),0)
+blur2= cv2.bilateralFilter(blur1,9,75,75)
+low_blue = np.array([55, 0, 0])
+high_blue = np.array([118, 255, 255])
+hsv = cv2.cvtColor(blur2, cv2.COLOR_BGR2HSV)
+mask = cv2.inRange(hsv, low_blue, high_blue)
+img1 = cv2.bitwise_and(img,img, mask= mask)
+#######
+cv2.imshow("start", img1)
+gray = cv2.cvtColor(img1, cv2.COLOR_BGR2GRAY)
+blurred = cv2.GaussianBlur(gray, (9, 9),0)
+
+gradX = cv2.Sobel(gray, ddepth=cv2.CV_32F, dx=1, dy=0)
+gradY = cv2.Sobel(gray, ddepth=cv2.CV_32F, dx=0, dy=1)
+
+gradient = cv2.subtract(gradX, gradY)
+gradient = cv2.convertScaleAbs(gradient)
+
+blurred = cv2.GaussianBlur(gradient, (9, 9),0)
+(_, thresh) = cv2.threshold(blurred, 90, 255, cv2.THRESH_BINARY)
+
+kernel = cv2.getStructuringElement(cv2.MORPH_ELLIPSE, (s, s))
+closed = cv2.morphologyEx(thresh, cv2.MORPH_CLOSE, kernel)
+
+closed = cv2.erode(closed, None, iterations=chance)
+closed = cv2.dilate(closed, None, iterations=chance)
+
+
+# 这里opencv3返回的是两个参数
+(cnts, _) = cv2.findContours(closed.copy(),cv2.CHAIN_APPROX_NONE,cv2.CHAIN_APPROX_SIMPLE)
+c = sorted(cnts, key=cv2.contourArea, reverse=True)[0]
+# compute the rotated bounding box of the largest contour
+rect = cv2.minAreaRect(c)
+box = np.int0(cv2.boxPoints(rect))
+
+# draw a bounding box arounded the detected barcode and display the image
+draw_img = cv2.drawContours(img.copy(), [box], -1, (0, 0, 255), max)
+
+cv2.imshow("draw_img", draw_img)
+
+cv2.imshow('blurred', blurred)
+cv2.imshow('gradX', gradX)
+cv2.imshow('gradY', gradY)
+cv2.imshow('final', gradient)
+cv2.imshow('thresh', thresh)
+cv2.imshow('closed', closed)
