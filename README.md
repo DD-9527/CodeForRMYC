@@ -23,7 +23,7 @@ https://pan.baidu.com/s/17iNWmNFBMSKog2ADmbLV1A?pwd=0000
 
 本仓库内以".dsp"为后缀的文件，均可在“RoboMaster”APP和“大疆教育平台”中打开
 
-软件下载链接：https://www.dji.com/cn/edu-hub（仓库内已上传安装包）
+软件下载链接：https://www.dji.com/cn/edu-hub
 
 非常感谢一直以来支持、参与机甲大师青少年对抗赛的每一个人,
 
